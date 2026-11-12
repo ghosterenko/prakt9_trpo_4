@@ -1,10 +1,13 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Concurrent;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using prakt_8_trpo.Models;
 using System.Text;
+using Microsoft.Extensions.Options;
+using System.IdentityModel.Tokens.Jwt;
 
 
 
@@ -22,9 +25,10 @@ if (Encoding.UTF8.GetByteCount(key) < 32)
 builder.Services.AddDbContext<TasksDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddSingleton<IPasswordHasher<User>, PasswordHasher<User>>( );
+builder.Services.AddSingleton<ConcurrentDictionary<string, DateTime>>( );
 builder.Services
     .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(options =>
+    .AddJwtBearer(options => {
         options.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuer = true,
@@ -38,8 +42,25 @@ builder.Services
             ValidateIssuerSigningKey = true,
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key)),
             ClockSkew = TimeSpan.Zero
-        }
-    );
+        };
+        options.Events = new JwtBearerEvents
+        {
+            OnTokenValidated = context =>
+            {
+                var jti = context.Principal?.FindFirst(JwtRegisteredClaimNames.Jti)?.Value;
+                if (string.IsNullOrEmpty(jti))
+                {
+                    context.Fail("В JWT отсутствует jti");
+                    return System.Threading.Tasks.Task.CompletedTask;
+                }
+                var revokedTokens = context.HttpContext.RequestServices.GetRequiredService<ConcurrentDictionary<string, DateTime>>( );
+                if (revokedTokens.ContainsKey(jti))
+                    context.Fail("JWT отозван");
+                return System.Threading.Tasks.Task.CompletedTask;
+            }
+        };
+    }
+);
 
 
 builder.Services.AddControllers( );
