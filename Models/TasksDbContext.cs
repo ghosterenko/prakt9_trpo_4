@@ -28,7 +28,7 @@ public partial class TasksDbContext : DbContext
         {
             entity.ToTable("Task");
 
-            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Id).UseIdentityColumn();
             entity.Property(e => e.Description).IsUnicode(false);
             entity.Property(e => e.OwnerLogin).IsUnicode(false);
             entity.Property(e => e.Title).IsUnicode(false);

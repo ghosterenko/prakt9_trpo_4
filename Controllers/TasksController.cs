@@ -19,7 +19,7 @@ namespace prakt_8_trpo.Controllers
             return Ok(_context.Tasks.Where(t => t.OwnerLogin == currentUser).ToList());
         }
         [HttpGet("all")]
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin")]
         public IActionResult GetAll()
         {
             return Ok(_context.Tasks.ToList());
@@ -42,7 +42,7 @@ namespace prakt_8_trpo.Controllers
         {
             if (task == null) 
                 return BadRequest();
-
+            
             task.Id = 0;
             task.OwnerLogin = User.Identity?.Name;
             task.IsCompleted = false;
@@ -50,7 +50,7 @@ namespace prakt_8_trpo.Controllers
             _context.Tasks.Add(task);
             _context.SaveChanges();
 
-            return Created();
+            return Created($"/api/v1/tasks/{task.Id}", task);
         }
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] Models.Task taskUpdate)

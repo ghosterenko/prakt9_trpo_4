@@ -32,7 +32,7 @@ namespace prakt_8_trpo.Controllers
             if (_context.Users.Any(u => u.Login == request.Login))
                 return Conflict("Логин уже существует");
 
-            var user = new User { Login = request.Login };
+            var user = new User { Login = request.Login, Role = "User" };
             user.PasswordHash = _hasher.HashPassword(user, request.Password);
             _context.Users.Add(user);
             _context.SaveChanges( );
@@ -64,7 +64,6 @@ namespace prakt_8_trpo.Controllers
         }
 
         [HttpGet("me")]
-        [Authorize]
         public IActionResult Me()
         { 
             return Ok(new 
@@ -79,14 +78,14 @@ namespace prakt_8_trpo.Controllers
             var claims = new [ ]
             {
                 new Claim(ClaimTypes.Name, user.Login!),
-                new Claim(ClaimTypes.Role, "Admin")
+                new Claim(ClaimTypes.Role, user.Role!)
             };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]!));
             var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
             var token = new JwtSecurityToken(
-                issuer: "TasksApi",
-                audience: "TasksApiClient",
+                issuer: "ExampleApi",
+                audience: "ExampleApiClient",
                 claims: claims,
                 expires: DateTime.UtcNow.AddMinutes(30),
                 signingCredentials: credentials

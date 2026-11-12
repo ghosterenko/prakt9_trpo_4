@@ -1,18 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\st310-05\\Desktop\\prakt8_trpo_4\\",
+  "WorkspaceRootPath": "C:\\Users\\st310-05\\Desktop\\prakt9_trpo_4\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0634F216-F88D-43F2-A62D-FA8767C498FC}|prakt_8_trpo.csproj|C:\\Users\\st310-05\\Desktop\\prakt8_trpo_4\\controllers\\taskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0634F216-F88D-43F2-A62D-FA8767C498FC}|prakt_8_trpo.csproj|solutionrelative:controllers\\taskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0634F216-F88D-43F2-A62D-FA8767C498FC}|prakt_8_trpo.csproj|c:\\users\\st310-05\\desktop\\prakt9_trpo_4\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0634F216-F88D-43F2-A62D-FA8767C498FC}|prakt_8_trpo.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0634F216-F88D-43F2-A62D-FA8767C498FC}|prakt_8_trpo.csproj|c:\\users\\st310-05\\desktop\\prakt8_trpo_4\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0634F216-F88D-43F2-A62D-FA8767C498FC}|prakt_8_trpo.csproj|C:\\Users\\st310-05\\Desktop\\prakt9_trpo_4\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0634F216-F88D-43F2-A62D-FA8767C498FC}|prakt_8_trpo.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0634F216-F88D-43F2-A62D-FA8767C498FC}|prakt_8_trpo.csproj|C:\\Users\\st310-05\\Desktop\\prakt8_trpo_4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0634F216-F88D-43F2-A62D-FA8767C498FC}|prakt_8_trpo.csproj|C:\\Users\\st310-05\\Desktop\\prakt9_trpo_4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0634F216-F88D-43F2-A62D-FA8767C498FC}|prakt_8_trpo.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0634F216-F88D-43F2-A62D-FA8767C498FC}|prakt_8_trpo.csproj|c:\\users\\st310-05\\desktop\\prakt9_trpo_4\\models\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0634F216-F88D-43F2-A62D-FA8767C498FC}|prakt_8_trpo.csproj|solutionrelative:models\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0634F216-F88D-43F2-A62D-FA8767C498FC}|prakt_8_trpo.csproj|c:\\users\\st310-05\\desktop\\prakt9_trpo_4\\controllers\\taskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0634F216-F88D-43F2-A62D-FA8767C498FC}|prakt_8_trpo.csproj|solutionrelative:controllers\\taskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0634F216-F88D-43F2-A62D-FA8767C498FC}|prakt_8_trpo.csproj|c:\\users\\st310-05\\desktop\\prakt9_trpo_4\\models\\tasksdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0634F216-F88D-43F2-A62D-FA8767C498FC}|prakt_8_trpo.csproj|solutionrelative:models\\tasksdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,17 +34,69 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Task.cs",
+              "DocumentMoniker": "C:\\Users\\st310-05\\Desktop\\prakt9_trpo_4\\Models\\Task.cs",
+              "RelativeDocumentMoniker": "Models\\Task.cs",
+              "ToolTip": "C:\\Users\\st310-05\\Desktop\\prakt9_trpo_4\\Models\\Task.cs",
+              "RelativeToolTip": "Models\\Task.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-12T05:39:19.442Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TasksDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\st310-05\\Desktop\\prakt9_trpo_4\\Models\\TasksDbContext.cs",
+              "RelativeDocumentMoniker": "Models\\TasksDbContext.cs",
+              "ToolTip": "C:\\Users\\st310-05\\Desktop\\prakt9_trpo_4\\Models\\TasksDbContext.cs",
+              "RelativeToolTip": "Models\\TasksDbContext.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAA5wB4AAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-12T05:34:58.669Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TasksController.cs",
+              "DocumentMoniker": "C:\\Users\\st310-05\\Desktop\\prakt9_trpo_4\\Controllers\\TasksController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TasksController.cs",
+              "ToolTip": "C:\\Users\\st310-05\\Desktop\\prakt9_trpo_4\\Controllers\\TasksController.cs",
+              "RelativeToolTip": "Controllers\\TasksController.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAkwEUAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-12T05:30:02.626Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\st310-05\\Desktop\\prakt9_trpo_4\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "C:\\Users\\st310-05\\Desktop\\prakt9_trpo_4\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-12T05:12:17.24Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\st310-05\\Desktop\\prakt8_trpo_4\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\st310-05\\Desktop\\prakt9_trpo_4\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\st310-05\\Desktop\\prakt8_trpo_4\\Program.cs",
+              "ToolTip": "C:\\Users\\st310-05\\Desktop\\prakt9_trpo_4\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAADEAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEAAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-05T04:46:41.63Z",
               "EditorCaption": ""
@@ -41,26 +105,13 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\st310-05\\Desktop\\prakt8_trpo_4\\Controllers\\AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\st310-05\\Desktop\\prakt9_trpo_4\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\st310-05\\Desktop\\prakt8_trpo_4\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\st310-05\\Desktop\\prakt9_trpo_4\\Controllers\\AuthController.cs",
               "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AQIAAEAAAAAAAAAAAAAQwE4AAAAgAAAA",
+              "ViewState": "AQIAACYAAAAAAAAAAADwv0kAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-05T04:31:44.008Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TasksController.cs",
-              "DocumentMoniker": "C:\\Users\\st310-05\\Desktop\\prakt8_trpo_4\\Controllers\\TasksController.cs",
-              "RelativeDocumentMoniker": "Controllers\\TasksController.cs",
-              "ToolTip": "C:\\Users\\st310-05\\Desktop\\prakt8_trpo_4\\Controllers\\TasksController.cs",
-              "RelativeToolTip": "Controllers\\TasksController.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAzwBwAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-29T04:09:20.145Z",
               "EditorCaption": ""
             }
           ]

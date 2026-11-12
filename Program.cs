@@ -1,12 +1,15 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using prakt_8_trpo.Models;
 using System.Text;
 
 
-var _context = new TasksDbContext( );
+
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = "Server=sql.ects;Database=tasksDB;User Id=student_00;password=student_00;TrustServerCertificate=true;";
 
 // Add services to the container.
 
@@ -15,7 +18,9 @@ var key = builder.Configuration [ "Jwt:Key" ]
 
 if (Encoding.UTF8.GetByteCount(key) < 32)
     throw new Exception("Ключ JWT слишком короткий");
-builder.Services.AddSingleton(_context.Users.ToList( ));
+
+builder.Services.AddDbContext<TasksDbContext>(options =>
+    options.UseSqlServer(connectionString));
 builder.Services.AddSingleton<IPasswordHasher<User>, PasswordHasher<User>>( );
 builder.Services
     .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -23,10 +28,10 @@ builder.Services
         options.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuer = true,
-            ValidIssuer = "",
+            ValidIssuer = "ExampleApi",
 
             ValidateAudience = true,
-            ValidAudience = "",
+            ValidAudience = "ExampleApiClient",
 
             ValidateLifetime = true,
 
@@ -40,7 +45,32 @@ builder.Services
 builder.Services.AddControllers( );
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer( );
-builder.Services.AddSwaggerGen( );
+builder.Services.AddSwaggerGen(options =>
+{
+    options.AddSecurityDefinition("bearer", new OpenApiSecurityScheme
+    {
+        Type = SecuritySchemeType.Http,
+        Scheme = "bearer"
+    });
+
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference 
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "bearer"
+                }
+                
+            
+            },
+            Array.Empty<string>()
+        }
+    });
+
+});
 
 
 var app = builder.Build( );
@@ -53,6 +83,8 @@ if (app.Environment.IsDevelopment( ))
 }
 
 app.UseHttpsRedirection( );
+
+app.UseAuthentication( );
 
 app.UseAuthorization( );
 
